@@ -1,0 +1,114 @@
+:root{
+    --g1: rgb(37, 190, 85)
+    --g2: rgb(85, 37, 190)
+}
+
+body{
+    
+    background-color: rgb(20, 20, 20);
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    margin: 0px;
+}
+@keyframes board-bg-pan{
+    from{
+        background-position: 0% center;
+    }
+    to{
+        background-position: -200% center;
+    }
+}
+.tile-bg{
+    animation: board-bg-pan 10s linear infinite;
+    background: linear-gradient(
+        to right,
+        rgb(37, 190, 85),
+        rgb(85, 37, 190),
+        rgb(37, 190, 85)
+    );
+    background-size: 200%;
+    aspect-ratio: 1/1;
+    height: 70%;
+    width: auto;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+}
+
+#tiles{
+    aspect-ratio: 1/1;
+    height: 100%;
+    width: auto;
+    position: absolute;
+
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+}
+
+.game-tile{
+    text-align: center;
+    font-family: 'Old Standard TT', serif;
+    font-size: 1rem;
+    transform: scale(0.95);
+    background-color: rgb(20, 20, 20);
+    overflow:hidden;
+}
+.cell-label{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: rgb(220, 220, 220)
+}
+
+.choices-bg{
+    animation: board-bg-pan 10s linear infinite;
+    background: linear-gradient(
+        to right,
+        rgb(232, 133, 181),
+        rgb(232, 135, 133),
+        rgb(232, 133, 181)
+    );
+    background-size: 200%;
+    aspect-ratio: 9/1;
+    height: 7.77vh;
+    width: auto;
+    position: relative;
+    text-align: center;
+
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.choice-tile{
+    text-align: center;
+    font-family: 'Old Standard TT', serif;
+    font-size: 1rem;
+    transform: scale(0.95);
+    background-color: rgb(20, 20, 20);
+    overflow:hidden;
+    position: relative;
+}
+
+.choice-label{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: rgb(220, 220, 220)
+}
+
+#num-choices{
+    position: relative;
+    height: 100%;
+    width: auto;
+
+
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: 1fr;
+}
